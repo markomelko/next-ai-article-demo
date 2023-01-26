@@ -1,5 +1,6 @@
 AI Article demo with NextJS & ContentfulCMS.
-Public demo can be found address: [coming later](coming later)
+
+Public demo can be found address: [https://next-ai-article-demo.vercel.app/](https://next-ai-article-demo.vercel.app/)
 
 ### Next lines created by create-next-app script
 

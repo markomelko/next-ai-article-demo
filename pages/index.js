@@ -2,15 +2,9 @@ import Head from 'next/head';
 
 import { getContentItems } from '../utils/data-handlers';
 
-import TeaserList from '../components/TeaserList';
+import ContentArea from '../components/layout/content-area';
+import TeaserList from '../components/teaser-list';
 
-// import styles from '@/styles/Home.module.css';
-
-/**
- * Home component as a root page.
- * Page will fetch all the articles data on SSR side.
- * After the data is fetched it renders all the items on screen.
- */
 export default function Home({ data }) {
   const { items } = data.dataResponse;
 
@@ -25,7 +19,9 @@ export default function Home({ data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TeaserList items={items} />
+      <ContentArea>
+        <TeaserList items={items} />
+      </ContentArea>
     </>
   );
 }
