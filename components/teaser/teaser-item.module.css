@@ -1,25 +1,32 @@
 .teasercard {
-    background-color: rgba(196, 196, 196, 0.502);
+    background-color: #424242;
     display: flex;
     flex-direction: column;
-    color: #fff;
     padding: 10px;
     width: 375px;
     margin-top: 10px;
+    border-radius: 5px;
+}
+
+.titletext, .smalltext, .defaulttext {
+    font-family: 'Bellota', cursive;
 }
 
 .titletext {
+    color: #9e9e9e;
     font-size: 25px;
     margin-bottom: 10px;
 }
 
 .smalltext {
+    color: #757575;
     font-size: 16px;
-    font-weight: 100;
+    font-weight: 300;
     margin-bottom: 10px;
 }
 
 .defaulttext {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
+    margin-bottom: 10px;
 }
