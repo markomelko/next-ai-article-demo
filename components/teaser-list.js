@@ -1,6 +1,4 @@
-import React from "react";
-
-import TeaserItem from "./TeaserItem";
+import TeaserItem from "./teaser/teaser-item";
 
 function TeaserList({items}) {
     return (items.map(item => <TeaserItem key={item.sys.id} item={item}/>))

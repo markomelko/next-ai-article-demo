@@ -1,21 +1,19 @@
-import React from 'react';
-
 import { getContentEntry } from '../../utils/data-handlers';
 
-function ArticlePage({ article }) {
-  console.log('ArticlePage', article);
+function ArticlePage({ articleData }) {
 
-  const { title, bodyText, descriptionText } = article.fields;
-  const { createdAt, updatedAt } = article.sys;
+  if (!articleData) return <div>Article not found...</div>;
+
+  console.log('ArticlePage lots of todos', articleData);
+
+  const { title, description } = articleData.fields;
+  const { createdAt, updatedAt } = articleData.sys;
 
   return (
     <div>
-      <div>Open AI Page</div>
+      <div>Open AI Article</div>
       <div>{title}</div>
-      <div>{bodyText}</div>
-      <div>{descriptionText}</div>
-      <div>{createdAt}</div>
-      <div>{updatedAt}</div>
+      <div>{description}</div>
     </div>
   );
 }
@@ -26,24 +24,22 @@ export async function getServerSideProps(context) {
   if (articleId) {
     const respObj = await getContentEntry(articleId);
     if (respObj.status === 'OK') {
-      // status OK
       return {
         props: {
-          article: respObj.dataResponse,
+          articleData: respObj.dataResponse,
         },
       };
     } else {
-      // status not OK
       return {
         props: {
-          article: { id: articleId },
+          articleData: null,
         },
       };
     }
   } else {
     return {
       props: {
-        article: {},
+        articleData: null,
       },
     };
   }
