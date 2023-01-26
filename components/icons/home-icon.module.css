@@ -1,4 +1,10 @@
 .icon {
-    fill: #000;
+    fill: #7cb342;;
+    transition: all 0.5s;
+}
+
+.icon:hover {
+    cursor: pointer;
+    fill: #a1cf70;
     transition: all 0.5s;
 }
