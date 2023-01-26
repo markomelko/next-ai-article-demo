@@ -6,14 +6,9 @@ import moment from 'moment';
 
 import classes from './teaser-item.module.css';
 
-const MyButton = React.forwardRef((props, ref) => {
-  
-  return (
-    <div className={classes.teaserButton}>
-      avaa artikkeli
-    </div>
-  )
-})
+const TeaserButton = React.forwardRef((props, ref) => {
+  return <div className={classes.teaserButton}>avaa artikkeli</div>;
+});
 
 function TeaserItem({ item }) {
   const { title, description, image } = item.fields;
@@ -28,7 +23,7 @@ function TeaserItem({ item }) {
 
     imageElem = (
       <Image
-        alt="Image alt text"
+        alt={title}
         src={imageUrl}
         width={350}
         height={200}
@@ -45,7 +40,7 @@ function TeaserItem({ item }) {
       {imageElem}
       <div className={classes.titletext}>{title}</div>
       <div className={classes.smalltext}>created: {articleCreated}</div>
-      {/* <div className={classes.smalltext}>updated: {articleUpdated}</div> */ }
+      {/* <div className={classes.smalltext}>updated: {articleUpdated}</div> */}
       <div className={classes.defaulttext}>{description}</div>
       <Link
         href={{
@@ -53,7 +48,7 @@ function TeaserItem({ item }) {
           query: { id: item.sys.id },
         }}
       >
-        <MyButton/>
+        <TeaserButton />
       </Link>
     </div>
   );

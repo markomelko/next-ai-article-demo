@@ -1,20 +1,12 @@
 import { getContentEntry } from '../../utils/data-handlers';
 
-function ArticlePage({ articleData }) {
+import ArticleItem from '../../components/article/article-item';
 
+function ArticlePage({ articleData }) {
   if (!articleData) return <div>Article not found...</div>;
 
-  console.log('ArticlePage lots of todos', articleData);
-
-  const { title, description } = articleData.fields;
-  const { createdAt, updatedAt } = articleData.sys;
-
   return (
-    <div>
-      <div>Open AI Article</div>
-      <div>{title}</div>
-      <div>{description}</div>
-    </div>
+      <ArticleItem articleData={articleData} />
   );
 }
 

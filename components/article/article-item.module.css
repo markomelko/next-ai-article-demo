@@ -1,4 +1,4 @@
-.teasercard {
+.articleContainer {
     background-color: #424242;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,6 @@
     border-radius: 5px;
 }
 
-/* TODO set texts to some local / default css file */
 .titletext, .smalltext, .defaulttext, .teaserButton {
     font-family: 'Bellota', cursive;
 }
@@ -42,9 +41,4 @@
     align-items: center;
     color: #424242;
     text-transform: uppercase;
-}
-
-.teaserButton:hover {
-    cursor: pointer;
-    background-color: #a1cf70;
 }
