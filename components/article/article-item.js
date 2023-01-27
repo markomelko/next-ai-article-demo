@@ -6,11 +6,10 @@ import ArticleBodyItems from './article-body-items';
 import classes from './article-item.module.css';
 
 function ArticleItem({ articleData }) {
-  console.log('articleData', articleData);
 
   const { title, description, image, bodyText } = articleData.fields;
   const { sys } = articleData;
-  const author = 'As by ChatGPT & Qs by Marko Melko';
+  const author = 'ChatGPT and Questions by Marko';
   const imageAuthor = 'https://www.pexels.com/';
 
   const articleCreated = moment(sys.createdAt).format('DD.MM.YYYY');
@@ -37,7 +36,7 @@ function ArticleItem({ articleData }) {
 
   return (
     <div className={classes.articleContainer}>
-      <div className={classes.titletext}>{title}</div>
+      <h1 className={classes.titletext}>{title}</h1>
       <div className={classes.smalltext}>created: {articleCreated}</div>
       <div className={classes.smalltext}>updated: {articleUpdated}</div>
       <div className={classes.smalltext}>{author}</div>

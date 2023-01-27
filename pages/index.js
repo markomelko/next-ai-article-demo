@@ -18,12 +18,14 @@ export default function Home({ data }) {
   return (
     <>
       <Head>
-        <title>Demo, OpenAI tech articles 2023</title>
+        <title>Demo App for showing OpenAI generated test articles.</title>
         <meta
           name="description"
-          content="Simple NextJS Demo app for OpenAI tech articles"
+          content="Demo App for showing OpenAI generated test articles."
         />
+        <meta property='og:title' content="Demo App for showing OpenAI generated test articles"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="/future-image.jpg"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TeaserList items={items} />
